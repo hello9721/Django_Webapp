@@ -5,8 +5,9 @@ from django.utils import timezone
 class Me(models.Model):
 
     title = models.CharField(max_length=20)
+    singer = models.CharField(max_length=20,default='')
     date = models.DateTimeField()
-    main = models.TextField()
+    url = models.TextField()
     
     def publish(self):
 
@@ -14,8 +15,5 @@ class Me(models.Model):
         self.save()
 
     def __str__(self):
-
         return self.title
 
-# {% static 'css/main.css' %}
-# {% load static %}

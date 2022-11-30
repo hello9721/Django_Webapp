@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'asia/seoul'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -121,4 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+APP_DIRS = os.path.join(BASE_DIR, 'Pro_02')
+STATICFILES_DIRS = [os.path.join(APP_DIRS, 'static'), ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
