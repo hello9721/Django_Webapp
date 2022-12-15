@@ -34,32 +34,51 @@
             left: calc((100vw - 1000px)/2);
 
             width: 1000px;
-            height: 100px;
+            /* height: 100px; */
 
             border: solid 2px white;
             border-collapse: collapse;
         }
 
-        td{
+        tr{ height: 100px; }
 
-            border: solid 1px white;
+        td{ 
+
+            width: 125px;
+
             border-collapse: collapse;
 
             text-align: center;
             color: white;
+
         }
 
         tr>.hide{
 
-            width: 0;
+            width: 100px;
             display: none;
+        }
+
+        tr:hover>td{ 
+            
+            width: 220px; 
+            color: #A3C6C4;
+
+        }
+
+        tr:hover>.trigger{
+
+            height: 0px;
+            display: block;
+            opacity: 0;
+
         }
 
         tr:hover>.hide{
 
-            width: 512px;
-            height: 315px;
+            width: 560px;
             display: block;
+
         }
 
 
@@ -77,7 +96,9 @@
             <td>{{ i.title }}</td>
             <td>{{ i.singer }}</td>
             <td class = "trigger">{{ i.url }}</td>
-            <td class = "hide"><iframe width="512" height="315" src="{{ i.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+            <td class = "hide"><iframe id="player" type="text/html" width="560" height="315"
+                src="{{ i.url }}"
+                frameborder="0"></iframe></td>
         </tr>
         {% endfor %}
 
